@@ -25,6 +25,7 @@ def task2(t):
 
 
 def fib(n):
+    # 斐波那契
     a, b = 0, 1
     i = 0
     while i < n:

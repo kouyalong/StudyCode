@@ -3,6 +3,7 @@
 
 
 class BinaryHeap(object):
+    # 二叉堆
 
     def __init__(self):
         self.heap_list = [0]
