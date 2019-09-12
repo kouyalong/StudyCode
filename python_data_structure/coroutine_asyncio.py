@@ -6,7 +6,6 @@ import asyncio
 import time
 
 
-
 async def say_after(delay, what):
     await asyncio.sleep(delay)
     print(what)
@@ -40,7 +39,8 @@ async def func1(future):
 
 
 def func1Main():
-    loop = asyncio.get_evnet_loop()
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
     future = asyncio.Future()
     asyncio.ensure_future(func1(future))
     print(loop.is_running())
@@ -56,11 +56,13 @@ async def func2(future):
 
 def call_result(future):
     print(future.result())
+    loop = asyncio.get_event_loop()
     loop.stop()
 
 
 def func2Main():
-    loop = asyncio.get_event_loop()
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
     future = asyncio.Future()
     asyncio.ensure_future(func2(future))
     future.add_done_callback(call_result)
