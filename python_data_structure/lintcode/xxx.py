@@ -5,7 +5,6 @@ from __future__ import absolute_import
 from functools import wraps
 import time
 from urllib.parse import urljoin
-from gm_upload.utils.image_utils import Picture
 
 import requests
 from requests.exceptions import HTTPError
@@ -121,8 +120,8 @@ landmark_key_enum = [
 ]
 
 
-MEGVII_KEY = "-6zs61jR1M4GqzE9jIO3eiL1W1sojaeE"
-MEGVII_SECRET = "J82yKgSplMDppw9oPpHeTVTA4hYxp0iB"
+# MEGVII_KEY = "-6zs61jR1M4GqzE9jIO3eiL1W1sojaeE"
+# MEGVII_SECRET = "J82yKgSplMDppw9oPpHeTVTA4hYxp0iB"
 
 
 MEGVII_BASE_URL = 'https://api-cn.faceplusplus.com/'
