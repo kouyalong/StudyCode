@@ -67,7 +67,7 @@ def merge_sort(al):
         else:
             res.append(right.pop())
     res.reverse()
-    return  (right or left) + res
+    return (right or left) + res
 
 
 def new_merge_sort(al):
