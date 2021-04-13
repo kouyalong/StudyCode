@@ -1,19 +1,97 @@
-*.egg-info
-*.pot
-*.py[co]
-__pycache__
-dist/
-build/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*~
+# C extensions
+*.so
+gengmei/settings_local.py
+# Distribution / packaging
+.Python
 env/
-
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
 .idea/
-.vscode/
-migrations
+.vscode
+*.egg-info/
+.installed.cfg
+*.egg
 
-.gm_rpcd.log/
-celerybeat-schedule
-celerybeat-schedule.db
-celerybeat.pid
-rpcd.json
-settings/settings_local.py
-files/fix_operation.conf
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# Rope
+.ropeproject
+
+# Django stuff:
+*.log
+*.pot
+
+# Sphinx documentation
+docs/_build/
+
+
+# config
+fabfile.py
+settings.online.py
+
+media/
+log/
+crawldata/
+conf/
+/static
+.vagrant/
+Vagrantfile
+
+*.DS_Store
+
+mobile/static/website-mobile/build.txt
+web/node_modules/*
+web/static/website/build.txt
+
+
+celerybeat*
+settings_local.py
+settings_override_*.py
+dump.rdb
+log
+
+gengmei/rpcd.json
+.env
+.tox
+.tests
+local_backend_api_test_config.py
+
+# vim
+*.swp
+
+fenxianggou.json
+*.sass-cache
+*.css.map
+.vscode/settings.json
+.python-version
+

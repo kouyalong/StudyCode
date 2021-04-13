@@ -117,14 +117,9 @@ def quick_sort(al):
 
 
 def quick_sort_de(al, first, last):
-    if first < last:
-        pos = partition(al, first, last)
-        quick_sort_de(al, first, pos-1)
-        quick_sort_de(al, pos+1, last)
-    return al
+    if first >= last:
+        return al
 
-
-def partition(al, first, last):
     value = al[first]
 
     left = first + 1
@@ -132,9 +127,9 @@ def partition(al, first, last):
 
     done = False
     while not done:
-        while left <= right and al[left] >= value:
+        while left <= right and al[left] <= value:
             left += 1
-        while right >= left and al[right] <= value:
+        while right >= left and al[right] >= value:
             right -= 1
 
         if right < left:
@@ -142,8 +137,28 @@ def partition(al, first, last):
         else:
             al[left], al[right] = al[right], al[left]
     al[first], al[right] = al[right], al[first]
-    return right
+    quick_sort_de(al, first, right - 1)
+    quick_sort_de(al, right + 1, last)
+    return al
 
+
+def new_quick_sort(lists, left, right):
+    if left >= right:
+        return lists
+    pivot = lists[left]
+    low = left
+    high = right
+    while left < right:
+        while left < right and lists[right] >= pivot:
+            right -= 1
+        lists[left] = lists[right]
+        while left < right and lists[left] <= pivot:
+            left += 1
+        lists[right] = lists[left]
+    lists[right] = pivot
+    new_quick_sort(lists, low, left-1)
+    new_quick_sort(lists, left+1, high)
+    return lists
 
 
 ll = [7, 3, 1, 4, 6, 2, 5, 8, 9, 3]
@@ -155,3 +170,4 @@ ll = [7, 3, 1, 4, 6, 2, 5, 8, 9, 3]
 # print(new_merge_sort(ll))
 # print(new_merge_sort_reserve(ll))
 print(quick_sort(ll))
+print(new_quick_sort(ll, 0, len(ll)-1))
